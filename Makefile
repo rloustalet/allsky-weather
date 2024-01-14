@@ -1,7 +1,7 @@
 PYTHON = python3
 PIP = pip3
 SYSTEMD_DIR = /etc/systemd/system
-INSTALL_DIR = /home/users/$(USER)/allsky
+INSTALL_DIR = /home/$(USER)/allsky
 
 .PHONY: install
 install: install_packages install_files install_service enable_service
