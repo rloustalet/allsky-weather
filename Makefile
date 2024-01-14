@@ -12,22 +12,22 @@ install_packages:
 
 .PHONY: install_files
 install_files:
-	cp -r html $(INSTALL_DIR)/html
-	cp -r scripts $(INSTALL_DIR)/scripts
+	sudo cp -r html $(INSTALL_DIR)/html
+	sudo cp -r scripts $(INSTALL_DIR)/scripts
 
 .PHONY: install_service
 install_service:
-	cp weather.service $(SYSTEMD_DIR)
+	sudo cp weather.service $(SYSTEMD_DIR)
 
 .PHONY: enable_service
 enable_service:
-	systemctl enable weather.service
+	sudo systemctl enable weather.service
 
 .PHONY: uninstall
 uninstall:
-	systemctl disable weather.service
-	rm $(SYSTEMD_DIR)/weather.service
-	rm -rf $(INSTALL_DIR)
+	sudo systemctl disable weather.service
+	sudo rm $(SYSTEMD_DIR)/weather.service
+	sudo rm -rf $(INSTALL_DIR)
 
 .PHONY: clean
 clean:
